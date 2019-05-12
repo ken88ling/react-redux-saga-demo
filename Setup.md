@@ -11,3 +11,5 @@ Configuration of Redux , react-redux
 9. Structure the folder
 10. MapActionToProps
 11. mapStateToProps
+12. mapActions
+13. mergeProps
