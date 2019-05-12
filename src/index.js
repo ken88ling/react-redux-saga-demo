@@ -10,20 +10,34 @@ function productReducer(state = [], action) {
   return state;
 }
 function userReducer(state = "", action) {
-  return state;
+  switch (action.type) {
+    case "updateUser":
+      return action.payload;
+    default:
+      return state;
+  }
 }
 
 const allReducers = combineReducers({
   products: productReducer,
   user: userReducer
 });
-const store = createStore(allReducers, {
-  products: [{ name: "iPhone" }],
-  user: "Michael"
-});
-//console.log(store.getState());
+const store = createStore(
+  allReducers,
+  {
+    products: [{ name: "iPhone" }],
+    user: "Michael"
+  },
+  window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-console.log(store.getState());
+const updateUserAction = {
+  type: "updateUser",
+  payload: {
+    user: "Ken"
+  }
+};
+store.dispatch(updateUserAction);
 
 ReactDOM.render(<App />, document.getElementById("root"));
 serviceWorker.unregister();
