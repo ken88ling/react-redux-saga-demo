@@ -9,3 +9,5 @@ Configuration of Redux , react-redux
 7. using redux DevTools
 8. Using Provider
 9. Structure the folder
+10. MapActionToProps
+11. mapStateToProps

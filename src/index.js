@@ -23,17 +23,9 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-const updateUserAction = {
-  type: "updateUser",
-  payload: {
-    user: "Ken"
-  }
-};
-store.dispatch(updateUserAction);
-
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App aRandomProps="whatever" />
   </Provider>,
   document.getElementById("root")
 );
