@@ -1,9 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Main from "./Main";
+import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<Main />, document.getElementById("root"));
+import { createStore } from "redux";
 
+function reducer() {
+  return "state";
+}
+
+const store = createStore(reducer);
+
+console.log(store.getState());
+ReactDOM.render(<App />, document.getElementById("root"));
 serviceWorker.unregister();
