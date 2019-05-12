@@ -1,29 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 import App from "./App";
+
 import { Provider } from "react-redux";
-
-import * as serviceWorker from "./serviceWorker";
-
 import { createStore, combineReducers } from "redux";
-
-function productReducer(state = [], action) {
-  return state;
-}
-function userReducer(state = "", action) {
-  switch (action.type) {
-    case "updateUser":
-      return action.payload;
-    default:
-      return state;
-  }
-}
+import userReducer from "./reducers/userReducer";
+import productReducer from "./reducers/productReducer";
 
 const allReducers = combineReducers({
   products: productReducer,
   user: userReducer
 });
+
 const store = createStore(
   allReducers,
   {

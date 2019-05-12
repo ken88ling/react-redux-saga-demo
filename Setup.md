@@ -8,3 +8,4 @@ Configuration of Redux , react-redux
 6. Setting an inital state
 7. using redux DevTools
 8. Using Provider
+9. Structure the folder
