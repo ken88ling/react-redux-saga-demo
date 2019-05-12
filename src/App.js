@@ -32,23 +32,16 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-const mapActionToProps = (dispatch, props) => {
-  console.log("mapActionToProps", props);
-  return bindActionCreators(
-    {
-      onUpdateUser: updateUser
-    },
-    dispatch
-  );
+const mapActionToProps = {
+  onUpdateUser: updateUser
 };
 
-const mergeProps = (propsFromState, propsFormDispatch, ownProps) => {
-  console.log("mergeProps", propsFromState, propsFormDispatch, ownProps);
-  return {};
-};
+// const mergeProps = (propsFromState, propsFormDispatch, ownProps) => {
+//   console.log("mergeProps", propsFromState, propsFormDispatch, ownProps);
+//   return {};
+// };
 
 export default connect(
   mapStateToProps,
-  mapActionToProps,
-  mergeProps
+  mapActionToProps
 )(App);
