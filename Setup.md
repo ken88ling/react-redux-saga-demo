@@ -4,3 +4,4 @@ Configuration of Redux , react-redux
 2. Create reducer (function) to the store
 3. Dispatch an action
 4. Update the store - reducer
+5. A more real-world store/reducers
