@@ -5,3 +5,4 @@ Configuration of Redux , react-redux
 3. Dispatch an action
 4. Update the store - reducer
 5. A more real-world store/reducers
+6. Setting an inital state
