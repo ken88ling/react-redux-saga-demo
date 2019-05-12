@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 
 import { Provider } from "react-redux";
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, compose } from "redux";
 import userReducer from "./reducers/userReducer";
 import productReducer from "./reducers/productReducer";
 
@@ -14,13 +14,15 @@ const allReducers = combineReducers({
   user: userReducer
 });
 
+const allStoreEnhancers = compose(window.__REDUX_DEVTOOLS_EXTENSION__());
+
 const store = createStore(
   allReducers,
   {
     products: [{ name: "iPhone" }],
     user: "Michael"
   },
-  window.__REDUX_DEVTOOLS_EXTENSION__()
+  allStoreEnhancers
 );
 
 ReactDOM.render(

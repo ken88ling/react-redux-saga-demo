@@ -13,3 +13,4 @@ Configuration of Redux , react-redux
 11. mapStateToProps
 12. mapActions
 13. mergeProps
+14. Compose from redux
