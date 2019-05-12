@@ -7,3 +7,4 @@ Configuration of Redux , react-redux
 5. A more real-world store/reducers
 6. Setting an inital state
 7. using redux DevTools
+8. Using Provider

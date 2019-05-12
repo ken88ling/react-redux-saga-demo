@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { Provider } from "react-redux";
+
 import * as serviceWorker from "./serviceWorker";
 
 import { createStore, combineReducers } from "redux";
@@ -39,5 +41,10 @@ const updateUserAction = {
 };
 store.dispatch(updateUserAction);
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
 serviceWorker.unregister();
