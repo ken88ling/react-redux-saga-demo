@@ -14,3 +14,4 @@ Configuration of Redux , react-redux
 12. mapActions
 13. mergeProps
 14. Compose from redux
+15. applyMiddleware from redux-thunk
