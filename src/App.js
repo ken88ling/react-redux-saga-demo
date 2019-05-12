@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { updateUser } from "./actions/user-actions";
+import { updateUser, apiRequest } from "./actions/user-actions";
 import { bindActionCreators } from "redux";
 
 class App extends Component {
@@ -14,6 +14,9 @@ class App extends Component {
     this.props.onUpdateUser(event.target.value);
   }
 
+  componentDidMount() {
+    this.props.onApiRequest();
+  }
   render() {
     return (
       <React.Fragment>
@@ -28,12 +31,13 @@ const mapStateToProps = (state, props) => {
   return {
     products: state.products,
     user: state.user,
-    userPlusProp: "`${state.user}`  `${props.aRandomProps}`"
+    userPlusProp: `some text ${props.aRandomProps}`
   };
 };
 
 const mapActionToProps = {
-  onUpdateUser: updateUser
+  onUpdateUser: updateUser,
+  onApiRequest: apiRequest
 };
 
 // const mergeProps = (propsFromState, propsFormDispatch, ownProps) => {

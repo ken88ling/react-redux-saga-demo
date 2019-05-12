@@ -16,3 +16,4 @@ Configuration of Redux , react-redux
 14. Compose from redux
 15. applyMiddleware from redux-thunk
 16. Jquery api call
+17.
