@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
 import { updateUser, apiRequest } from "./actions/user-actions";
-import { bindActionCreators } from "redux";
 
 class App extends Component {
   constructor(props) {

@@ -1,4 +1,5 @@
 import $ from "jquery";
+
 export const UPDATE_USER = "users:updateUser";
 export const SHOW_ERROR = "users:Show Error";
 
@@ -23,16 +24,26 @@ export function showError() {
 export function apiRequest() {
   return dispatch => {
     $.ajax({
-      url:
-        "https://eodhistoricaldata.com/api/real-time/AAPL.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&fmt=json",
+      url: "https://randomuser.me/api",
       contentType: "application/json",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json"
       },
-      success: function(result) {
-        console.log("api success", result);
-        dispatch(updateUser(result.newUser));
+      success: function(response) {
+        console.log("api success", response.results);
+
+        var o = response.results;
+
+        var result = [
+          {
+            gender: o.gender
+          }
+        ];
+        console.log(result.gender);
+        console.log();
+        // //console.log(result.map());
+        //dispatch();
       },
       error() {
         console.log("ERROR");
